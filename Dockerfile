@@ -11,11 +11,4 @@ RUN echo "jovyan ALL=(ALL:ALL) NOPASSWD" >> /etc/sudoers.d/user \
 USER ${NB_USER}
 WORKDIR /home/${NB_USER}
 
-# RUN mamba install -y -c pyg -c pytorch -c conda-forge -n base \
-#     pytorch-scatter \
-#     pytorch-sparse \
-#     pytorch-cluster
-
-# RUN pip install git+https://github.com/pyg-team/pytorch_geometric.git
-
 RUN pip install pyg_lib torch_geometric torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.4.0+cu121.html
