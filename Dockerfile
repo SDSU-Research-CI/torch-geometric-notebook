@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=quay.io/jupyter/pytorch-notebook:cuda12-2024-07-29
+ARG BASE_IMAGE=quay.io/jupyter/pytorch-notebook:cuda12-2025-07-07
 FROM ${BASE_IMAGE}
 
 USER root
@@ -21,7 +21,7 @@ USER ${NB_USER}
 WORKDIR /home/${NB_USER}
 
 # Install torch geometric
-RUN pip install pyg_lib torch_geometric torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.4.0+cu121.html
+RUN pip install pyg_lib torch_geometric torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.7.1+cu128.html
 
 # Install VSCode Server proxy
 RUN pip install jupyter-codeserver-proxy
